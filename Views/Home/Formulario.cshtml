@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Nuevo";
+}
+
+@model Participantes
+
+<div class="text-center">
+    <h1 class="display-4" style="font-weight: 500;">@ViewData["Title"]</h1>
+</div>
+
+<div asp-validation-summary="All"></div>
+
+<div>
+    <form action="" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h3 style="font-weight: 400;">Datos del Participante</h3>
+                </div>
+                <div class="form-group">
+                    <label asp-for="nombre"></label>
+                    <input type="text" asp-for="nombre" class="form-control" placeholder="Ej: Pablo">
+                </div>
+                <div class="form-group">
+                    <label asp-for="apellido"></label>
+                    <input type="text" asp-for="apellido" class="form-control" placeholder="Ej: García">
+                </div>
+                <div class="form-group">
+                    <label asp-for="edad"></label>
+                    <input type="text" asp-for="edad" class="form-control" placeholder="Ej: 24">
+                </div>
+                <div class="form-group">
+                    <label asp-for="genero"></label>
+                    <label><input asp-for="genero" type="radio" name="genero" value="M"> M</label>
+                    <label><input asp-for="genero" type="radio" name="genero" value="M"> F</label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ciudad"></label>
+                    <input type="text" asp-for="ciudad" class="form-control" placeholder="Ej: Loreto">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <h3 style="font-weight: 400;">Datos de la Carrera</h3>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tiempo"></label>
+                    <input type="text" asp-for="tiempo" class="form-control" placeholder="Ej: 20.37">
+                </div>
+                <div class="form-group">
+                    <label asp-for="distancia"></label>
+                    <input type="text" asp-for="distancia" class="form-control" placeholder="Ej: 122">
+                </div>
+                <div class="form-group">
+                    <label asp-for="lugar"></label>
+                    <input type="text" asp-for="lugar" class="form-control" placeholder="Ej: Avenida">
+                </div>               
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Registrar participante</button>
+        </div>
+    </form>
+</div>
