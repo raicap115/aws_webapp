@@ -7,11 +7,10 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// public IConfiguration Configuration { get; }
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-// builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(
-//                     Configuration.GetConnectionString("PostgressConnection")));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("PostgressConnection")));
+
 
 var app = builder.Build();
 

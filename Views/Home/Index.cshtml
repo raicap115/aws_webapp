@@ -10,7 +10,12 @@
 <div style="margin-top: 20px; margin-bottom: 30px;">
     <a asp-controller="Home" asp-action="Formulario"><button type="button" class="btn btn-warning">Nuevo Registro</button></a>
 </div>
-
+<div>
+        @if (Model.Count == 0)
+        {
+            <strong style="color: red;">No se han registrado participantes.</strong>
+        }
+    </div>
 <div>
     
         <table class="table table-hover">
@@ -28,19 +33,14 @@
         @foreach (var participantes in Model)
     {
             <tr>
-                    <td>@participantes.nombre</td>
-                    <td>@participantes.apellido</td>
-                    <td>@participantes.tiempo</td>
-                    <td>@participantes.distancia</td>
-                    <td>@participantes.lugar</td>
+                <td>1</td>
+                <td>@participantes.nombre</td>
+                <td>@participantes.apellido</td>
+                <td>@participantes.tiempo</td>
+                <td>@participantes.distancia</td>
+                <td>@participantes.lugar</td>
             </tr>
         
     }
-    <div>
-        @if (Model.Count == 0)
-        {
-            <strong style="color: red;">No se han registrado partcipantes.</strong>
-        }
-    </div>
     </table>
 </div>

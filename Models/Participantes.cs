@@ -20,12 +20,15 @@ namespace aws_webapp{
         [Required(ErrorMessage="Ingrese su ciudad")]
         [Display(Name="Ciudad:")]
         public string ciudad { get; set; }
-        [Required(ErrorMessage="Ingrese el tiempo en segundos")]
-        [Display(Name="Tiempo (en seg):")]
+        [Required(ErrorMessage="Ingrese el tiempo en minutos")]
+        [Display(Name="Tiempo (en min):")]
         public double tiempo { get; set; }
-        [Required(ErrorMessage="Ingrese la distancia en metos")]
-        [Display(Name="Distancia (en m):")]
+        [Required(ErrorMessage="Ingrese la distancia en kilómetros")]
+        [Display(Name="Distancia (en km):")]
         public double distancia { get; set; }
+        [Required(ErrorMessage="Ingrese su ritmo promedio")]
+        [Display(Name="Ritmo:")]
+        public double ritmo { get; set; }
         [Required(ErrorMessage="Ingrese el lugar")]
         [Display(Name="Lugar:")]
         public string lugar { get; set; }
