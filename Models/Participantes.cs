@@ -32,5 +32,11 @@ namespace aws_webapp{
         [Required(ErrorMessage="Ingrese el lugar")]
         [Display(Name="Lugar:")]
         public string lugar { get; set; }
+        [Required(ErrorMessage="Ingrese su rol en el Team")]
+        [Display(Name="Rol:")]
+        public string rol { get; set; }
+        [Required(ErrorMessage="Ingrese su correo institucional")]
+        [Display(Name="Email:")]
+        public string correo { get; set; }
     }
 }

@@ -43,6 +43,15 @@ public class HomeController : Controller
             return View(objParticipantes);
         }
 
+    [HttpPost]
+    public IActionResult Borrar(int id)
+    {
+        var participante = _context.participantes.FirstOrDefault(x => x.id == id);
+        _context.Remove(participante);
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+
 
 
 

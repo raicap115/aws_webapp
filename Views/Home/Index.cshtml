@@ -24,23 +24,43 @@
                     <th>Puesto</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Tiempo</th>
-                    <th>Distancia</th>
+                    <th>Tiempo (en min)</th>
+                    <th>Distancia (en km)</th>
                     <th>Lugar</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
+            <tbody style="background-color: white;">
         @foreach (var participantes in Model)
     {
-            <tr>
+            <tr style="text-align: center;">
                 <td>1</td>
                 <td>@participantes.nombre</td>
                 <td>@participantes.apellido</td>
                 <td>@participantes.tiempo</td>
                 <td>@participantes.distancia</td>
                 <td>@participantes.lugar</td>
-            </tr>
-        
+                <td><a asp-route-id="@participantes.id" data-bs-toggle="modal" data-bs-target="#detalle">Ver Detalle</a><a style="color: red;"><form action="/Home/Borrar" method="post"><input type="hidden" name="Id" value="@participantes.id">Deshacer Registro</form></a></td>
+            </tr>      
     }
+    </tbody>
     </table>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="detalle" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalle">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
